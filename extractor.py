@@ -74,6 +74,8 @@ def makeSegMask(img):
 	return res
 
 if __name__ == '__main__':
+    start = time.time()
+
     # Loads video file into CV2
     video = cv2.VideoCapture('walking.mp4')
     
@@ -115,8 +117,8 @@ if __name__ == '__main__':
             final = cv2.bitwise_and(thresh, img)
             
             # Show current frame
-            cv2.imshow('Silhouette Mask', mask)
-            cv2.imshow('Extracted Silhouette', final)
+            #cv2.imshow('Silhouette Mask', mask)
+            #cv2.imshow('Extracted Silhouette', final)
             
             # Allow early termination with Esc key
             key = cv2.waitKey(10)
@@ -130,3 +132,6 @@ if __name__ == '__main__':
     cv2.destroyAllWindows()
     video.release()
     out.release()
+
+    end = time.time()
+    print("Time taken: {}s".format(end - start))
