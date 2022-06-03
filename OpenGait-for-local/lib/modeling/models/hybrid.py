@@ -7,6 +7,14 @@ from ..base_model import BaseModel
 from ..modules import SeparateFCs, BasicConv2d, SetBlockWrapper, HorizontalPoolingPyramid, PackSequenceWrapper, SeparateBNNecks
 from torch.autograd import Variable
 
+import logging
+import sys
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="hybrid.py: %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)],
+)
 
 class hybrid(BaseModel):
     """
@@ -91,7 +99,9 @@ class hybrid(BaseModel):
         #Baseline
         outs = self.Backbone(sils)  # [n, s, c, h, w]
         outs_n, outs_s, outs_c, outs_h, outs_w = outs.size()
-
+        
+        logging.info(outs.size())
+        logging.info(gl.size())
 
         outs_trans = torch.bmm(outs, gl)
         outs_trans = outs_trans.reshape(outs_n, outs_s, outs_c, outs_h, outs_h)
