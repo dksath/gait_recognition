@@ -64,6 +64,8 @@ class GaitSet(BaseModel):
 
         del ipts
         
+
+        #GaitSet
         outs = self.set_block1(sils)
         gl = self.set_pooling(outs, seqL, dim=1)[0]
         gl = self.gl_block2(gl)
