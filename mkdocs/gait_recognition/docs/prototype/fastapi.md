@@ -1,39 +1,67 @@
-# Pietas sine roboris aristis mutato coniuge
+# Backend Server
+The prototype requires 2 servers to be run at the same time. The backend server is run on Uvicorn and it uses FastAPI to run the model for prediction.
 
-## Est dolore silentia madidis iuvenes
+## Run Uvicorn Server 
+1. clone this repo.
+    ```bash
+    git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype
+    ```
+2. change directory to the backend folder and run the server  
+    ```bash
+    uvicorn main:app 
+    ```
 
-Lorem markdownum erat: dea boum quid obverterat necis errat geminos incurva:
-superi. *Remissis mitti*, damnatura *belua nymphae* dum aetate pulsa vigor
-miles. Ut attulit, tamen fide inpluit, in ipse haec oscula nihil effusus, in nec
-Penelopae obituque hiatu? Crathis animique regio et baculum coepta ferus Quid
-idem mutatus pronus hiatu, sibi erat quo accessi.
+## Endpoints 
 
-1. Adfuit o semina pectore potes ager bubo
-2. Quoque flammas laeti
-3. Sed frondes exercet
+#### Special requests
 
-## Erit quanto
+1. `preflight_handler` handles preflight requests sent by the browser before the actual request. The preflight gives the server a chance to examine what the actual request will look like before it's made.
+    ```python
+    @app.options('/{rest_of_path:path}')
+    async def preflight_handler
+    ```
 
-Est quod tellurem, nescitve cadat cavata. Ima umet dixit vulnera et gravidae
-Ismariis seque; orbe abdita solo celeremque et annis per etiam Cycnum patria.
-Sunt sidera inani vulgat, patet timori suppressis utilis adhibete usus parens
-sacrata tonitruque! Convicia **nunc** mento rari longae litem, inopem!
+2. `add_CORS_header` enables CORS (Cross-Origin Resource Sharing) to occur between the backend server and the frontend server in the browser
+    ```python
+    @app.middleware("http")
+    async def add_CORS_header(request: Request, call_next)
+    ```
 
-Haec tamen dubioque deus offensa, a recens, lugebisque, est Phoeboque epulas
-portaque. Comitate pronos cum oris sceptra moenia, imo feruntur virum
-perfectaque facem errat formidine cruorem *ferrum iusserat*. Flebile silva!
+#### POST request
+1. `upload` endpoint posts a file added through the React server to the Backend server. File is converted to .mp4 regardless of filetype.
+    ```python
+    @app.post("/upload", response_description="", response_model = "")
+    async def upload(file:UploadFile = File(...)):
+    ```
 
-## Ab omnes arbor limine non arcem in
-
-Mota dum nigris? Nec his Philomela quam, patet cadis homo iter cum tamen subiit
-Cereris.
-
-1. Textum ope
-2. Solus ducitur Idaei sideraque o amantem quamvis
-3. Successit querenti non lacrimas aliquo
-4. Cum non arma auctor ignara latitavimus alta
-
-Hinc et socios ferus iam hoc, age illa rictu tibi. Deum templa sed orbe deducunt
-vir, obortis [solus](http://www.suam.com/maiorartus.html) lacrimisque palato
-volucris cacumine. Tamen nollet studioque contigit querenti, amplectitur amori
-dolor adit, galea umeris? Vagantur fugit!
+#### GET requests
+1. `loading` endpoint runs the silhouette extractor in the background when this endpoint is called. The silhoeutte extraction occurs on the video that was uploaded. At the same time, the video is split into a set of images to feed into the model.
+    ```python
+    @app.get("/loading")
+    async def loading():
+    ```
+2. `video` endpoint streams the original video with a bounding box attached to the subject to focus on.
+    ```python
+    @app.get("/video")
+    async def video_endpoint(range: str = Header(None)):
+    ```
+3. `extract` endpoint streams the silhouete extracted video with no bounding box to show that the subject has been properly extracted.
+    ```python
+    @app.get("/extract")
+    async def extractor_endpoint(range: str = Header(None)):
+    ```
+4. `opengait` endpoint runs the model on the background on the set of images to create an embedding vector of the subject in the video. The embedding vector is compared with other embedding vectors in the database using the smallest Euclidean distance to give a subject-id of another video that matches with the embedding vector of the original video.
+    ```python
+    @app.get("/opengait")
+    async def opengait_embeddings():
+    ```
+5. `embed1` endpoint streams the original video
+    ```python
+    @app.get("/embed1", response_class=StreamingResponse)
+    async def video_endpoint(range: str = Header(None)):
+    ```
+6. `embed2` endpoint streams the video that has the most similar embedding vector to the subject in the original video
+    ```python
+    @app.get("/embed2", response_class=StreamingResponse)
+    async def video_endpoint(range: str = Header(None)):
+    ```

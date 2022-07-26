@@ -22,8 +22,9 @@ CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 o
 <!-- - `--iter` You can specify a number of iterations or use `restore_hint` in the config file and resume training from there. -->
 - `--log_to_file` If specified, the terminal log will be written on disk simultaneously. 
 
-You can run commands in [train.sh](train.sh) for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.
+You can run commands in [train.sh](https://github.com/dksath/gait_recognition/blob/main/OpenGait-for-local/train.sh) for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.
 
+#### Models We Created
 To run the models we created, a Gait Ensemble of GaitSet + GaitPart and a Hybrid model, use these commands:
 
 **Gait Ensemble**
@@ -40,12 +41,11 @@ Evaluate the trained model by
 ```
 CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase test
 ```
-- `--phase` Specified as `test`.
-- `--iter` Specify a iteration checkpoint.
+`--phase` : Specified as `test` ,`--iter` : Specify a iteration checkpoint
 
 **Tip**: Other arguments are the same as train phase.
 
-You can run commands in [test.sh](test.sh) for testing different models.
+You can run commands in [test.sh](https://github.com/dksath/gait_recognition/blob/main/OpenGait-for-local/test.sh) for testing different models.
 
 ### Customize
 1. Read the [detailed config](https://github.com/dksath/gait_recognition/blob/main/OpenGait-for-local/docs/1.detailed_config.md) to figure out the usage of needed setting items;
