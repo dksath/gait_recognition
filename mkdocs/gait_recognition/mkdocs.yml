@@ -1,0 +1,23 @@
+site_name: Gait Recognition
+#site_url: final
+nav:
+    - Home: 'index.md'
+    - 'User Guide': 
+        - Getting Started: 'user-guide/getting-started.md'
+    - 'Training Model': 
+        - OpenGait: 'opengait/opengait.md'
+    - 'Prototype': 
+        - FastAPI: 'prototype/fastapi.md'
+        - React: 'prototype/react.md'
+    - About: 'about.md'
+theme: 
+    name: null
+    custom_dir: 'cinder'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: false
+  - pymdownx.superfences 
+
+      
