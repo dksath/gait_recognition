@@ -1,39 +1,30 @@
-# Pietas sine roboris aristis mutato coniuge
+# Frontend Server
+The prototype requires 2 servers to be run at the same time. 
+The frontend server uses a Node. js server to prerender React components.
 
-## Est dolore silentia madidis iuvenes
+## How To Run
 
-Lorem markdownum erat: dea boum quid obverterat necis errat geminos incurva:
-superi. *Remissis mitti*, damnatura *belua nymphae* dum aetate pulsa vigor
-miles. Ut attulit, tamen fide inpluit, in ipse haec oscula nihil effusus, in nec
-Penelopae obituque hiatu? Crathis animique regio et baculum coepta ferus Quid
-idem mutatus pronus hiatu, sibi erat quo accessi.
+1. clone this repository 
 
-1. Adfuit o semina pectore potes ager bubo
-2. Quoque flammas laeti
-3. Sed frondes exercet
+    ```bash
+    git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype
+    ```
 
-## Erit quanto
+2. change directory to the frontend folder 
+    ```bash
+    cd react
+    ```
 
-Est quod tellurem, nescitve cadat cavata. Ima umet dixit vulnera et gravidae
-Ismariis seque; orbe abdita solo celeremque et annis per etiam Cycnum patria.
-Sunt sidera inani vulgat, patet timori suppressis utilis adhibete usus parens
-sacrata tonitruque! Convicia **nunc** mento rari longae litem, inopem!
+3. Install relevant dependencies
+    ```bash
+    npm install
+    ```
 
-Haec tamen dubioque deus offensa, a recens, lugebisque, est Phoeboque epulas
-portaque. Comitate pronos cum oris sceptra moenia, imo feruntur virum
-perfectaque facem errat formidine cruorem *ferrum iusserat*. Flebile silva!
+4. run the server  
+    ```bash
+    npm start
+    ```
 
-## Ab omnes arbor limine non arcem in
+5. Open http://localhost:3000 in your browser
 
-Mota dum nigris? Nec his Philomela quam, patet cadis homo iter cum tamen subiit
-Cereris.
-
-1. Textum ope
-2. Solus ducitur Idaei sideraque o amantem quamvis
-3. Successit querenti non lacrimas aliquo
-4. Cum non arma auctor ignara latitavimus alta
-
-Hinc et socios ferus iam hoc, age illa rictu tibi. Deum templa sed orbe deducunt
-vir, obortis [solus](http://www.suam.com/maiorartus.html) lacrimisque palato
-volucris cacumine. Tamen nollet studioque contigit querenti, amplectitur amori
-dolor adit, galea umeris? Vagantur fugit!
+## 

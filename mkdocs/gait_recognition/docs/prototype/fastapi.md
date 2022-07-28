@@ -1,12 +1,23 @@
 # Backend Server
 The prototype requires 2 servers to be run at the same time. The backend server is run on Uvicorn and it uses FastAPI to run the model for prediction.
 
-## Run Uvicorn Server 
-1. clone this repo.
+## How To Run
+
+1. clone this repository
     ```bash
     git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype
     ```
-2. change directory to the backend folder and run the server  
+2. change directory to the backend folder 
+    ```bash
+    cd backend
+    ```
+
+3. Install relevant dependencies
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. run the server  
     ```bash
     uvicorn main:app 
     ```
