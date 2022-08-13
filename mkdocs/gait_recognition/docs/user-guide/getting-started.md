@@ -5,13 +5,13 @@ This is a user guide to install the entire project.
 
 ### OpenGait 
 
-In [github/gait_recogntition](https://github.com/dksath/gait_recognition), we added an [OpenGait](https://github.com/dksath/gait_recognition/tree/main/OpenGait-for-local) folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official [OpenGait](https://github.com/ShiqiYu/OpenGait) repo instead.
+In [github/gait_training](https://github.com/S21-Gait-Recognition/gait_training), we added an [OpenGait](https://github.com/S21-Gait-Recognition/gait_training/tree/main/OpenGait-for-local) folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official [OpenGait](https://github.com/ShiqiYu/OpenGait) repo instead.
 
 #### Installation
 
 1. clone this repo.
     ```
-    git clone https://github.com/dksath/gait_recognition
+    git clone https://github.com/S21-Gait-Recognition/gait_training
     ```
 
 2. Install dependenices:
@@ -132,11 +132,12 @@ pip install -v -e .
 # thus any local modifications made to the code will take effect without reinstallation.
 ```
 
-Case b: If you use mmdet as a dependency or third-party package, install it with pip:
+Case B: If you use mmdet as a dependency or third-party package, install it with pip:
 
 ```shell
 pip install mmdet
 ```
+This is the method we used.
 
 #### Verify the installation
 
@@ -171,7 +172,7 @@ model = init_detector(config_file, checkpoint_file, device='cpu')  # or device='
 inference_detector(model, 'demo/cat.jpg')
 ```
 
-You will see a list of arrays printed, indicating the detected bounding boxes.
+Since we used pip to install mmdetection, we continued to use option (b). After doing so, you will see a list of arrays printed, indicating the detected bounding boxes.
 
 
 
@@ -181,3 +182,5 @@ You will see a list of arrays printed, indicating the detected bounding boxes.
 mim download mmdet --config scnet_r50_fpn_1x_coco --dest .
 ```
 The downloading will take several seconds or more, depending on your network environment. When it is done, you will find two files `scnet_r50_fpn_1x_coco.py` and `scnet_r50_fpn_1x_coco-c3f09857.pth` in your current folder. Place them in the backend folder inside the cloned prototype [repo](#react) as such `configs/scnet/scnet_r50_fpn_1x_coco.py` & `checkpoints/scnet_r50_fpn_1x_coco-c3f09857.pth`
+
+Alternatively, you are able to obtain the weights to SCNet-R50-FPN-1x directly [here](https://github.com/open-mmlab/mmdetection/tree/master/configs/scnet). Simply download the weights and add them to your created backend folder such as `checkpoints/scnet_r50_fpn_1x_coco-c3f09857.pth`  

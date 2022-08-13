@@ -25,6 +25,6 @@ The frontend server uses a Node. js server to prerender React components.
     npm start
     ```
 
-5. Open http://localhost:3000 in your browser
+5. Open `http://localhost:3000` in your browser
 
 ## 

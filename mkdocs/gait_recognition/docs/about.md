@@ -1,13 +1,14 @@
-## Commands
+## About Us
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Team Members
 
-## Project layout
+- `Dharmapuri Krishna Sathvik` : [Github](https://github.com/dksath)
+- ` Ngui Jia Xuan, Sheriann` : [Github](https://github.com/sleekleek)
+- `Vincent Leonardo` : [Github](https://github.com/vincentleooo)
+- `Sarah Wong` : [Github](https://https://github.com/wongimae)
+- `Sarah Ramjoo` : [Github](https://github.com/SarahRamjoo)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+
+## Project Repo
+[Github](https://github.com/S21-Gait-Recognition)
+
