@@ -179,16 +179,18 @@
 
 <h2 id="model-training">Model Training</h2>
 <h3 id="prepare-dataset">Prepare dataset</h3>
-<p>See <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/0.prepare_dataset.md">prepare dataset</a>.</p>
+<p>See <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/0.prepare_dataset.md">prepare dataset</a>.</p>
 <h3 id="get-trained-model">Get trained model</h3>
 <ul>
 <li>Option 1:
-    <pre class="highlight"><code>python misc/download_pretrained_model.py</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python misc/download_pretrained_model.py
+</code></pre></div></li>
 <li>Option 2: Go to the <a href="https://github.com/ShiqiYu/OpenGait/releases/">release page</a>, then download the model file and uncompress it to <a href="output">output</a>.</li>
 </ul>
 <h3 id="train">Train</h3>
 <p>Train a model by
-<pre class="highlight"><code>CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase train</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase train
+</code></pre></div>
 -  <code>python -m torch.distributed.launch</code> <a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">DDP</a> launch instruction.
 -  <code>--nproc_per_node</code> The number of gpus to use, and it must equal the length of <code>CUDA_VISIBLE_DEVICES</code>.
 -  <code>--cfgs</code> The path to config file.
@@ -197,28 +199,31 @@
 <ul>
 <li><code>--log_to_file</code> If specified, the terminal log will be written on disk simultaneously. </li>
 </ul>
-<p>You can run commands in <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/train.sh">train.sh</a> for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.</p>
+<p>You can run commands in <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/train.sh">train.sh</a> for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.</p>
 <h4 id="models-we-created">Models We Created</h4>
 <p>To run the models we created, a Gait Ensemble of GaitSet + GaitPart and a Hybrid model, use these commands:</p>
 <p><strong>Gait Ensemble</strong>
-<pre class="highlight"><code class="language-shell">CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/gaitens.yaml --phase train</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python -m torch.distributed.launch --nproc_per_node<span class="o">=</span><span class="m">2</span> opengait/main.py --cfgs ./config/gaitens.yaml --phase train
+</code></pre></div>
 <strong>Hybrid</strong>
-<pre class="highlight"><code class="language-shell">CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/hybrid.yaml --phase train</code></pre></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span> python -m torch.distributed.launch --nproc_per_node<span class="o">=</span><span class="m">2</span> opengait/main.py --cfgs ./config/hybrid.yaml --phase train
+</code></pre></div></p>
 <h3 id="test">Test</h3>
 <p>Evaluate the trained model by
-<pre class="highlight"><code>CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase test</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase test
+</code></pre></div>
 <code>--phase</code> : Specified as <code>test</code> ,<code>--iter</code> : Specify a iteration checkpoint</p>
 <p><strong>Tip</strong>: Other arguments are the same as train phase.</p>
-<p>You can run commands in <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/test.sh">test.sh</a> for testing different models.</p>
+<p>You can run commands in <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/test.sh">test.sh</a> for testing different models.</p>
 <h3 id="customize">Customize</h3>
 <ol>
-<li>Read the <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/1.detailed_config.md">detailed config</a> to figure out the usage of needed setting items;</li>
-<li>See <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/2.how_to_create_your_model.md">how to create your model</a>;</li>
-<li>There are some advanced usages, refer to <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/3.advanced_usages.md">advanced usages</a>, please.</li>
+<li>Read the <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/1.detailed_config.md">detailed config</a> to figure out the usage of needed setting items;</li>
+<li>See <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/2.how_to_create_your_model.md">how to create your model</a>;</li>
+<li>There are some advanced usages, refer to <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/3.advanced_usages.md">advanced usages</a>, please.</li>
 </ol>
 <h3 id="warning">Warning</h3>
 <ul>
-<li>In <code>DDP</code> mode, zombie processes may be generated when the program terminates abnormally. You can use this command <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/misc/clean_process.sh">sh misc/clean_process.sh</a> to clear them.</li>
+<li>In <code>DDP</code> mode, zombie processes may be generated when the program terminates abnormally. You can use this command <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/misc/clean_process.sh">sh misc/clean_process.sh</a> to clear them.</li>
 </ul></div>
         
         

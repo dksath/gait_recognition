@@ -174,15 +174,16 @@
 <p>This is a user guide to install the entire project.</p>
 <h2 id="getting-started">Getting Started</h2>
 <h3 id="opengait">OpenGait</h3>
-<p>In <a href="https://github.com/S21-Gait-Recognition/gait_training">github/gait_training</a>, we added an <a href="https://github.com/S21-Gait-Recognition/gait_training/tree/main/OpenGait-for-local">OpenGait</a> folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official <a href="https://github.com/ShiqiYu/OpenGait">OpenGait</a> repo instead.</p>
+<p>In <a href="https://github.com/KLASS-gait-recognition/gait_training">github/gait_training</a>, we added an <a href="https://github.com/KLASS-gait-recognition/gait_training/tree/main/OpenGait-for-local">OpenGait</a> folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official <a href="https://github.com/ShiqiYu/OpenGait">OpenGait</a> repo instead.</p>
 <h4 id="installation">Installation</h4>
 <ol>
 <li>
 <p>clone this repo.
-    <pre class="highlight"><code>git clone https://github.com/S21-Gait-Recognition/gait_training</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/KLASS-gait-recognition/gait_training
+</code></pre></div></p>
 </li>
 <li>
-<p>Install dependenices:</p>
+<p>Install dependencies:</p>
 <ul>
 <li>pytorch &gt;= 1.6</li>
 <li>torchvision</li>
@@ -193,12 +194,17 @@
 <li>py7zr</li>
 </ul>
 <hr />
-<p>Install dependenices by <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Anaconda</a>:
-<pre class="highlight"><code>conda install tqdm pyyaml tensorboard opencv py7zr
-conda install pytorch==1.6.0 torchvision -c pytorch</code></pre>
-Or, Install dependenices by pip:</p>
-<pre class="highlight"><code>pip install tqdm pyyaml tensorboard opencv-python py7zr
-pip install torch==1.6.0 torchvision==0.7.0</code></pre>
+<p>Install dependencies by <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Anaconda</a>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda install tqdm pyyaml tensorboard opencv py7zr
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda install pytorch==1.6.0 torchvision -c pytorch
+</code></pre></div>
+Or, Install dependencies by pip:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip install tqdm pyyaml tensorboard opencv-python py7zr
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip install torch==1.6.0 torchvision==0.7.0
+</code></pre></div>
+<p>Nota bene: due to certain conflicts in dependencies, installing an older version of <code>setuptools</code> might be required.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install setuptools==59.5.0
+</code></pre></div>
 </li>
 </ol>
 <h3 id="react">React</h3>
@@ -207,14 +213,15 @@ pip install torch==1.6.0 torchvision==0.7.0</code></pre>
 <ol>
 <li>
 <p>clone this repo.
-    <pre class="highlight"><code>git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone https://github.com/KLASS-gait-recognition/GaitSearch
+</code></pre></div></p>
 </li>
 <li>
 <p>Install node.js and npm</p>
 <p><strong>You’ll need to have Node 14.0.0 or later version on your local development machine</strong> (but it’s not required on the server). We recommend using the latest LTS version. You can use <a href="https://github.com/creationix/nvm#installation">nvm</a> (macOS/Linux) or <a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows">nvm-windows</a> to switch Node versions between different projects. For more information visit the official website of <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">node.js</a></p>
 </li>
 <li>
-<p>Install dependenices:</p>
+<p>Install dependencies:</p>
 <ul>
 <li>@chakra-ui/react &gt;= 2.2.3,</li>
 <li>@emotion/react &gt;= 11.9.3,</li>
@@ -238,10 +245,14 @@ pip install torch==1.6.0 torchvision==0.7.0</code></pre>
 <li>web-vitals &gt;= 2.1.4</li>
 </ul>
 <hr />
-<p>Install dependenices by <a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm</a>:</p>
-<pre class="highlight"><code class="language-powershell">npm install [&lt;package-spec&gt; ...]
-
-aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall</code></pre>
+<p>Install dependencies by <a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="p">[&lt;</span><span class="n">package-spec</span><span class="p">&gt;</span> <span class="p">...]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">aliases</span><span class="p">:</span> <span class="n">add</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="k">in</span><span class="p">,</span> <span class="n">ins</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">insta</span><span class="p">,</span> <span class="n">instal</span><span class="p">,</span> <span class="n">isnt</span><span class="p">,</span> <span class="n">isnta</span><span class="p">,</span> <span class="n">isntal</span><span class="p">,</span> <span class="n">isntall</span>
+</code></pre></div>
+<p>Or, to automatically install based on <code>package.json</code>,</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npm install
+</code></pre></div>
 </li>
 </ol>
 <h3 id="fastapi">FastAPI</h3>
@@ -249,19 +260,19 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall</cod
 <h4 id="installation_2">Installation</h4>
 <ol>
 <li>
-<p>Install dependenices:</p>
+<p>Install dependencies:</p>
 <ul>
 <li>FastAPI</li>
 <li>Uvicorn</li>
 <li>OpenCV</li>
 </ul>
 <hr />
-<p>Install dependenices by <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Anaconda</a>:
-<pre class="highlight"><code>conda install -c conda-forge fastapi uvicorn
-</code></pre>
-Or, Install dependenices by pip:</p>
-<pre class="highlight"><code>pip install fastapi "uvicorn[standard]"
-</code></pre>
+<p>Install dependencies by <a href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Anaconda</a>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>conda install -c conda-forge fastapi uvicorn
+</code></pre></div>
+Or, Install dependencies by pip:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip install fastapi &quot;uvicorn[standard]&quot;
+</code></pre></div>
 </li>
 </ol>
 <h3 id="mmdetection">MMdetection</h3>
@@ -273,38 +284,45 @@ Or, Install dependenices by pip:</p>
 </ol>
 <h4 id="installation_3">Installation</h4>
 <p><strong>Step 0.</strong> Install <a href="https://github.com/open-mmlab/mmcv">MMCV</a> using <a href="https://github.com/open-mmlab/mim">MIM</a>.</p>
-<pre class="highlight"><code class="language-shell">pip install -U openmim
-mim install mmcv-full</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip install -U openmim
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>mim install mmcv-full
+</code></pre></div>
 <p><strong>Step 1.</strong> Install MMDetection.</p>
 <p>Case a: If you develop and run mmdet directly, install it from source:</p>
-<pre class="highlight"><code class="language-shell">git clone https://github.com/open-mmlab/mmdetection.git
-cd mmdetection
-pip install -v -e .
-# "-v" means verbose, or more output
-# "-e" means installing a project in editable mode,
-# thus any local modifications made to the code will take effect without reinstallation.</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git clone https://github.com/open-mmlab/mmdetection.git
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">cd</span> mmdetection
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>pip install -v -e .
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># &quot;-v&quot; means verbose, or more output</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># &quot;-e&quot; means installing a project in editable mode,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># thus any local modifications made to the code will take effect without reinstallation.</span>
+</code></pre></div>
 <p>Case B: If you use mmdet as a dependency or third-party package, install it with pip:</p>
-<p><pre class="highlight"><code class="language-shell">pip install mmdet</code></pre>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip install mmdet
+</code></pre></div>
 This is the method we used.</p>
 <h4 id="verify-the-installation">Verify the installation</h4>
 <p>To verify whether MMDetection is installed correctly, we provide some sample codes to run an inference demo.</p>
 <p><strong>Step 1.</strong> We need to download config and checkpoint files.</p>
-<pre class="highlight"><code class="language-shell">mim download mmdet --config yolov3_mobilenetv2_320_300e_coco --dest .</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mim download mmdet --config yolov3_mobilenetv2_320_300e_coco --dest .
+</code></pre></div>
 <p>The downloading will take several seconds or more, depending on your network environment. When it is done, you will find two files <code>yolov3_mobilenetv2_320_300e_coco.py</code> and <code>yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth</code> in your current folder.</p>
 <p><strong>Step 2.</strong> Verify the inference demo.</p>
 <p>Option (a). If you install mmdetection from source, just run the following command.</p>
-<pre class="highlight"><code class="language-shell">python demo/image_demo.py demo/demo.jpg yolov3_mobilenetv2_320_300e_coco.py yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth --device cpu --out-file result.jpg</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python demo/image_demo.py demo/demo.jpg yolov3_mobilenetv2_320_300e_coco.py yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth --device cpu --out-file result.jpg
+</code></pre></div>
 <p>You will see a new image <code>result.jpg</code> on your current folder, where bounding boxes are plotted on cars, benches, etc.</p>
 <p>Option (b). If you install mmdetection with pip, open you python interpreter and copy&amp;paste the following codes.</p>
-<pre class="highlight"><code class="language-python">from mmdet.apis import init_detector, inference_detector
-
-config_file = 'yolov3_mobilenetv2_320_300e_coco.py'
-checkpoint_file = 'yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth'
-model = init_detector(config_file, checkpoint_file, device='cpu')  # or device='cuda:0'
-inference_detector(model, 'demo/cat.jpg')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span> <span class="nn">mmdet.apis</span> <span class="kn">import</span> <span class="n">init_detector</span><span class="p">,</span> <span class="n">inference_detector</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">config_file</span> <span class="o">=</span> <span class="s1">&#39;yolov3_mobilenetv2_320_300e_coco.py&#39;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">checkpoint_file</span> <span class="o">=</span> <span class="s1">&#39;yolov3_mobilenetv2_320_300e_coco_20210719_215349-d18dff72.pth&#39;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">init_detector</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="n">checkpoint_file</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>  <span class="c1"># or device=&#39;cuda:0&#39;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">inference_detector</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;demo/cat.jpg&#39;</span><span class="p">)</span>
+</code></pre></div>
 <p>Since we used pip to install mmdetection, we continued to use option (b). After doing so, you will see a list of arrays printed, indicating the detected bounding boxes.</p>
-<p><strong>Step 3.</strong> Download the SCNet model that is used for silhouette extraction and bounding box detection in the prototype.</p>
-<p><pre class="highlight"><code class="language-shell">mim download mmdet --config scnet_r50_fpn_1x_coco --dest .</code></pre>
+<p><strong>Step 3 [Optional].</strong> Download the SCNet model that is used for silhouette extraction and bounding box detection in the prototype. In normal circumstances, this will be <strong>automatically downloaded on first run</strong>.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mim download mmdet --config scnet_r50_fpn_1x_coco --dest .
+</code></pre></div>
 The downloading will take several seconds or more, depending on your network environment. When it is done, you will find two files <code>scnet_r50_fpn_1x_coco.py</code> and <code>scnet_r50_fpn_1x_coco-c3f09857.pth</code> in your current folder. Place them in the backend folder inside the cloned prototype <a href="#react">repo</a> as such <code>configs/scnet/scnet_r50_fpn_1x_coco.py</code> &amp; <code>checkpoints/scnet_r50_fpn_1x_coco-c3f09857.pth</code></p>
 <p>Alternatively, you are able to obtain the weights to SCNet-R50-FPN-1x directly <a href="https://github.com/open-mmlab/mmdetection/tree/master/configs/scnet">here</a>. Simply download the weights and add them to your created backend folder such as <code>checkpoints/scnet_r50_fpn_1x_coco-c3f09857.pth</code>  </p></div>
         

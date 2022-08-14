@@ -176,18 +176,22 @@
 <h2 id="how-to-run">How To Run</h2>
 <ol>
 <li>clone this repository
-    <pre class="highlight"><code class="language-bash">git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/KLASS-gait-recognitionn/GaitSearch
+</code></pre></div></li>
 <li>
 <p>change directory to the backend folder 
-    <pre class="highlight"><code class="language-bash">cd backend</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> backend
+</code></pre></div></p>
 </li>
 <li>
 <p>Install relevant dependencies
-    <pre class="highlight"><code class="language-bash">pip install -r requirements.txt</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip install -r requirements.txt
+</code></pre></div></p>
 </li>
 <li>
 <p>run the server<br />
-    <pre class="highlight"><code class="language-bash">uvicorn main:app </code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uvicorn main:app 
+</code></pre></div></p>
 </li>
 </ol>
 <h2 id="endpoints">Endpoints</h2>
@@ -195,41 +199,50 @@
 <ol>
 <li>
 <p><code>preflight_handler</code> handles preflight requests sent by the browser before the actual request. The preflight gives the server a chance to examine what the actual request will look like before it's made.
-    <pre class="highlight"><code class="language-python">@app.options('/{rest_of_path:path}')
-async def preflight_handler</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="s1">&#39;/{rest_of_path:path}&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">preflight_handler</span>
+</code></pre></div></p>
 </li>
 <li>
 <p><code>add_CORS_header</code> enables CORS (Cross-Origin Resource Sharing) to occur between the backend server and the frontend server in the browser
-    <pre class="highlight"><code class="language-python">@app.middleware("http")
-async def add_CORS_header(request: Request, call_next)</code></pre></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">middleware</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">add_CORS_header</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">call_next</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
 </ol>
 <h4 id="post-request">POST request</h4>
 <ol>
 <li><code>upload</code> endpoint posts a file added through the React server to the Backend server. File is converted to .mp4 regardless of filetype.
-    <pre class="highlight"><code class="language-python">@app.post("/upload", response_description="", response_model = "")
-async def upload(file:UploadFile = File(...)):</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/upload&quot;</span><span class="p">,</span> <span class="n">response_description</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">response_model</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">upload</span><span class="p">(</span><span class="n">file</span><span class="p">:</span><span class="n">UploadFile</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="o">...</span><span class="p">)):</span>
+</code></pre></div></li>
 </ol>
 <h4 id="get-requests">GET requests</h4>
 <ol>
 <li><code>loading</code> endpoint runs the silhouette extractor in the background when this endpoint is called. The silhoeutte extraction occurs on the video that was uploaded. At the same time, the video is split into a set of images to feed into the model.
-    <pre class="highlight"><code class="language-python">@app.get("/loading")
-async def loading():</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/loading&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">loading</span><span class="p">():</span>
+</code></pre></div></li>
 <li><code>video</code> endpoint streams the original video with a bounding box attached to the subject to focus on.
-    <pre class="highlight"><code class="language-python">@app.get("/video")
-async def video_endpoint(range: str = Header(None)):</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/video&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">video_endpoint</span><span class="p">(</span><span class="nb">range</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+</code></pre></div></li>
 <li><code>extract</code> endpoint streams the silhouete extracted video with no bounding box to show that the subject has been properly extracted.
-    <pre class="highlight"><code class="language-python">@app.get("/extract")
-async def extractor_endpoint(range: str = Header(None)):</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/extract&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">extractor_endpoint</span><span class="p">(</span><span class="nb">range</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+</code></pre></div></li>
 <li><code>opengait</code> endpoint runs the model on the background on the set of images to create an embedding vector of the subject in the video. The embedding vector is compared with other embedding vectors in the database using the smallest Euclidean distance to give a subject-id of another video that matches with the embedding vector of the original video.
-    <pre class="highlight"><code class="language-python">@app.get("/opengait")
-async def opengait_embeddings():</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/opengait&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">opengait_embeddings</span><span class="p">():</span>
+</code></pre></div></li>
 <li><code>embed1</code> endpoint streams the original video
-    <pre class="highlight"><code class="language-python">@app.get("/embed1", response_class=StreamingResponse)
-async def video_endpoint(range: str = Header(None)):</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/embed1&quot;</span><span class="p">,</span> <span class="n">response_class</span><span class="o">=</span><span class="n">StreamingResponse</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">video_endpoint</span><span class="p">(</span><span class="nb">range</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+</code></pre></div></li>
 <li><code>embed2</code> endpoint streams the video that has the most similar embedding vector to the subject in the original video
-    <pre class="highlight"><code class="language-python">@app.get("/embed2", response_class=StreamingResponse)
-async def video_endpoint(range: str = Header(None)):</code></pre></li>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/embed2&quot;</span><span class="p">,</span> <span class="n">response_class</span><span class="o">=</span><span class="n">StreamingResponse</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">video_endpoint</span><span class="p">(</span><span class="nb">range</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="kc">None</span><span class="p">)):</span>
+</code></pre></div></li>
 </ol></div>
         
         
