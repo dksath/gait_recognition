@@ -10,5 +10,5 @@
 
 
 ## Project Repo
-[Github](https://github.com/S21-Gait-Recognition)
+[Github](https://github.com/KLASS-gait-recognitionn)
 

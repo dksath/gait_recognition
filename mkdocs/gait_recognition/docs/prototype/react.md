@@ -7,7 +7,7 @@ The frontend server uses a Node. js server to prerender React components.
 1. clone this repository 
 
     ```bash
-    git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype
+    git clone https://github.com/KLASS-gait-recognitionn/GaitSearch
     ```
 
 2. change directory to the frontend folder 

@@ -179,7 +179,7 @@
 
 <h2 id="model-training">Model Training</h2>
 <h3 id="prepare-dataset">Prepare dataset</h3>
-<p>See <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/0.prepare_dataset.md">prepare dataset</a>.</p>
+<p>See <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/0.prepare_dataset.md">prepare dataset</a>.</p>
 <h3 id="get-trained-model">Get trained model</h3>
 <ul>
 <li>Option 1:
@@ -197,7 +197,7 @@
 <ul>
 <li><code>--log_to_file</code> If specified, the terminal log will be written on disk simultaneously. </li>
 </ul>
-<p>You can run commands in <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/train.sh">train.sh</a> for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.</p>
+<p>You can run commands in <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/train.sh">train.sh</a> for training different models. Training is done on a Linux environment. Commands and code would have to be changed manually according to your specific OS environment.</p>
 <h4 id="models-we-created">Models We Created</h4>
 <p>To run the models we created, a Gait Ensemble of GaitSet + GaitPart and a Hybrid model, use these commands:</p>
 <p><strong>Gait Ensemble</strong>
@@ -209,16 +209,16 @@
 <pre class="highlight"><code>CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 opengait/main.py --cfgs ./config/baseline/baseline.yaml --phase test</code></pre>
 <code>--phase</code> : Specified as <code>test</code> ,<code>--iter</code> : Specify a iteration checkpoint</p>
 <p><strong>Tip</strong>: Other arguments are the same as train phase.</p>
-<p>You can run commands in <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/test.sh">test.sh</a> for testing different models.</p>
+<p>You can run commands in <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/test.sh">test.sh</a> for testing different models.</p>
 <h3 id="customize">Customize</h3>
 <ol>
-<li>Read the <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/1.detailed_config.md">detailed config</a> to figure out the usage of needed setting items;</li>
-<li>See <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/2.how_to_create_your_model.md">how to create your model</a>;</li>
-<li>There are some advanced usages, refer to <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/docs/3.advanced_usages.md">advanced usages</a>, please.</li>
+<li>Read the <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/1.detailed_config.md">detailed config</a> to figure out the usage of needed setting items;</li>
+<li>See <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/2.how_to_create_your_model.md">how to create your model</a>;</li>
+<li>There are some advanced usages, refer to <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/docs/3.advanced_usages.md">advanced usages</a>, please.</li>
 </ol>
 <h3 id="warning">Warning</h3>
 <ul>
-<li>In <code>DDP</code> mode, zombie processes may be generated when the program terminates abnormally. You can use this command <a href="https://github.com/S21-Gait-Recognition/gait_training/blob/main/OpenGait-for-local/misc/clean_process.sh">sh misc/clean_process.sh</a> to clear them.</li>
+<li>In <code>DDP</code> mode, zombie processes may be generated when the program terminates abnormally. You can use this command <a href="https://github.com/KLASS-gait-recognitionn/gait_training/blob/main/OpenGait-for-local/misc/clean_process.sh">sh misc/clean_process.sh</a> to clear them.</li>
 </ul></div>
         
         

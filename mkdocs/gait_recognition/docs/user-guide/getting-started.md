@@ -5,16 +5,16 @@ This is a user guide to install the entire project.
 
 ### OpenGait 
 
-In [github/gait_training](https://github.com/S21-Gait-Recognition/gait_training), we added an [OpenGait](https://github.com/S21-Gait-Recognition/gait_training/tree/main/OpenGait-for-local) folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official [OpenGait](https://github.com/ShiqiYu/OpenGait) repo instead.
+In [github/gait_training](https://github.com/KLASS-gait-recognition/gait_training), we added an [OpenGait](https://github.com/KLASS-gait-recognition/gait_training/tree/main/OpenGait-for-local) folder that is pulled from another repo. We trained our models in this repo. For the latest updated code, please visit and clone the official [OpenGait](https://github.com/ShiqiYu/OpenGait) repo instead.
 
 #### Installation
 
 1. clone this repo.
     ```
-    git clone https://github.com/S21-Gait-Recognition/gait_training
+    git clone https://github.com/KLASS-gait-recognition/gait_training
     ```
 
-2. Install dependenices:
+2. Install dependencies:
     - pytorch >= 1.6
     - torchvision
     - pyyaml
@@ -24,16 +24,22 @@ In [github/gait_training](https://github.com/S21-Gait-Recognition/gait_training)
     - py7zr
     
     _______
-    Install dependenices by [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
+    Install dependencies by [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
     ```
     conda install tqdm pyyaml tensorboard opencv py7zr
     conda install pytorch==1.6.0 torchvision -c pytorch
     ```    
-    Or, Install dependenices by pip:
+    Or, Install dependencies by pip:
     
     ```
     pip install tqdm pyyaml tensorboard opencv-python py7zr
     pip install torch==1.6.0 torchvision==0.7.0
+    ```
+
+    Nota bene: due to certain conflicts in dependencies, installing an older version of `setuptools` might be required.
+
+    ```
+    pip install setuptools==59.5.0
     ```
 
 ### React
@@ -43,14 +49,14 @@ To run the prototype install node.js server.
 
 1. clone this repo.
     ```
-    git clone https://github.com/S21-Gait-Recognition/gait_recognition_prototype
+    git clone https://github.com/KLASS-gait-recognition/GaitSearch
     ```
 
 2. Install node.js and npm
 
     **You’ll need to have Node 14.0.0 or later version on your local development machine** (but it’s not required on the server). We recommend using the latest LTS version. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects. For more information visit the official website of [node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-3. Install dependenices:
+3. Install dependencies:
        - @chakra-ui/react >= 2.2.3,
        - @emotion/react >= 11.9.3,
        - @emotion/styled >= 11.9.3,
@@ -72,13 +78,19 @@ To run the prototype install node.js server.
        - styled-components >= 5.3.5,
        - web-vitals >= 2.1.4
     _______
-    Install dependenices by [npm](https://docs.npmjs.com/cli/v8/commands/npm-install):
+    Install dependencies by [npm](https://docs.npmjs.com/cli/v8/commands/npm-install):
     
     ```powershell
     npm install [<package-spec> ...]
 
     aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
-    ``` 
+    ```
+
+    Or, to automatically install based on `package.json`,
+
+    ```
+    npm install
+    ```
 
 ### FastAPI
 
@@ -86,18 +98,18 @@ To run the model in the prototype, install FastAPI and uvicorn server. More info
 
 #### Installation
 
-1. Install dependenices:
+1. Install dependencies:
        - FastAPI
        - Uvicorn
        - OpenCV
     
     _______
-    Install dependenices by [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
+    Install dependencies by [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html):
     ```
     conda install -c conda-forge fastapi uvicorn
 
     ```    
-    Or, Install dependenices by pip:
+    Or, Install dependencies by pip:
     
     ```
     pip install fastapi "uvicorn[standard]"
@@ -176,7 +188,7 @@ Since we used pip to install mmdetection, we continued to use option (b). After 
 
 
 
-**Step 3.** Download the SCNet model that is used for silhouette extraction and bounding box detection in the prototype.
+**Step 3 [Optional].** Download the SCNet model that is used for silhouette extraction and bounding box detection in the prototype. In normal circumstances, this will be **automatically downloaded on first run**.
 
 ```shell
 mim download mmdet --config scnet_r50_fpn_1x_coco --dest .
