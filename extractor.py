@@ -88,7 +88,7 @@ if __name__ == '__main__':
     # Get video file's dimensions
     frame_width = int(video.get(3))
     frame_height = int(video.get(4))
-    totalFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    totalFrames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
 
     # Creates output video file
     out = cv2.VideoWriter('walking_sil.avi', cv2.VideoWriter_fourcc(
